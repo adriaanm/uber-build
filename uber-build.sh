@@ -561,7 +561,7 @@ function stepSetFlags () {
       RELEASE=true
       DRY_RUN=true
       IDE_BUILD=true
-      SIGN_ARTIFACTS=true
+      SIGN_ARTIFACTS=false
       ;;
     nightly )
       RELEASE=true
@@ -1579,4 +1579,4 @@ fi
 # END
 ######
 
-printStep "Build succesful"
+printStep "Build successful"

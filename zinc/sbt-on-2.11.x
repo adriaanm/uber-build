@@ -80,15 +80,16 @@
           }
         ]
       }, {
-        name: scalacheck
-        uri: "https://github.com/rickynils/scalacheck.git#"${vars.scalacheck-tag}
+        name:   "scalacheck",
+        system: "ivy",
+        uri:    "ivy:org.scalacheck#scalacheck_"${vars.scala.binary.version}";"${vars.scalacheck.version.number}
       }, {
         name:   "sbinary",
-        extra.sbt-version: "0.13.5",
+        extra.sbt-version: ${vars.sbt-build-sbt-version},
         uri:    "git://github.com/harrah/sbinary.git#"${vars.sbinary-tag}
       }, {
         name:   "sbt",
-        uri:    "git://github.com/sbt/sbt.git#"${vars.sbt-tag}
+        uri:    "git://github.com/adriaanm/sbt.git#"${vars.sbt-tag}
         extra: {
           sbt-version: ${vars.sbt-build-sbt-version},
           projects: [
@@ -106,7 +107,7 @@
         name:   "sbt-republish",
         uri:    "http://github.com/typesafehub/sbt-republish.git#"${vars.sbt-republish-tag},
         set-version: ${vars.sbt-version},
-        extra.sbt-version: "0.13.5"
+        extra.sbt-version: ${vars.sbt-build-sbt-version}
       }
     ],
     cross-version:standard,
@@ -115,7 +116,7 @@
     deploy: [
       {
         uri=${?vars.publish-repo},
-        credentials=${HOME}"/.credentials",
+        // credentials=${HOME}"/.credentials",
         projects:["sbt-republish"]
       }
     ]

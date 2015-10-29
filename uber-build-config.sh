@@ -14,7 +14,7 @@ KEYSTORE_GIT_REPO="git@github.com:typesafehub/typesafe-keystore.git"
 # If debug information should be printed while uber-build is running, this variable need to be set to an arbitrary value.
 DEBUG=
 # MaxPermSize needs to be set manually to a large value in Java6
-MAVEN_OPTS="-XX:MaxPermSize=128M"
+MAVEN_OPTS="-Xmx2048M -Xss2M -XX:MaxPermSize=128M"
 # Ant options. The Scala build needs a fair amount of memory
-ANT_OPTS="-Xms512M -Xmx2048M -Xss1M -XX:MaxPermSize=128M"
+ANT_OPTS="-Xmx2048M -Xss2M -XX:MaxPermSize=128M"
 
